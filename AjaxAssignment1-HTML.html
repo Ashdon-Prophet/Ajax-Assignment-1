@@ -8,10 +8,26 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $(document).on("submit", "#form1", function(){
-                alert("hi");
+                $.get('http://api.openweathermap.org/data/2.5/weather?q='+$("#drop_down option:selected").attr("value")+',us&APPID=655e7586300f298d4e3059af7c7733f3', function(r_data){
+                    console.log(r_data.name);
+                    console.log(r_data.main);
+                    console.log(r_data.coord);
+                    console.log(r_data.main.humidity);
+                    console.log(r_data.weather[0].description);
+                    $("#info").append('<div id="weather_box"><h3>'+$("#drop_down option:selected").attr("name")+'</h3><p>Weather: '+(r_data.weather[0].description)+'</p><p>Temp: '+(r_data.main.temp)+'</p><p>Humidity: '+(r_data.main.humidity)+'</p></div>');
+                }, "json")
+                return false;
             })
             $(document).on("submit", "#form2", function(){
-                alert("bye");
+                $.get('http://api.openweathermap.org/data/2.5/weather?q='+$("#city").val()+',us&APPID=655e7586300f298d4e3059af7c7733f3', function(r_data){
+                    console.log(r_data.name);
+                    console.log(r_data.main);
+                    console.log(r_data.coord);
+                    console.log(r_data.main.humidity);
+                    console.log(r_data.weather[0].description);
+                    $("#info").append('<div id="weather_box"><h3>'+$("#city").val()+'</h3><p>Weather: '+(r_data.weather[0].description)+'</p><p>Temp: '+(r_data.main.temp)+'</p><p>Humidity: '+(r_data.main.humidity)+'</p></div>');
+                }, "json")
+                return false;
             })
         })
     </script>
@@ -22,10 +38,10 @@
             <form id="form1">
                 <select id="drop_down">
                     <option name="place_hold" value="none">--Choose One--</option>
-                    <option name="Seattle" value="Seattle,us">Seattle, WA</option>
-                    <option name="San_Francisco" value="San_Francisco">San Francisco, CA</option>
-                    <option name="San_Jose" value="San_Jose">San Jose, CA</option>
-                    <option name="Los_Angeles" value="Los_Angeles">Los Angeles, CA</option>
+                    <option name="Seattle" value="Seattle">Seattle, WA</option>
+                    <option name="San Francisco" value="San_Francisco">San Francisco, CA</option>
+                    <option name="San Jose" value="San_Jose">San Jose, CA</option>
+                    <option name="Los Angeles" value="Los_Angeles">Los Angeles, CA</option>
                 </select>
                 <input type="submit"></input>
             </form>
@@ -38,6 +54,7 @@
             </form>
         </div>
         <div id="info">
+
         </div>
     </div>
 </body>
