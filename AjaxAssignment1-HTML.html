@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(document).on("submit", "#form1", function(){
+                alert("hi");
+            })
+            $(document).on("submit", "#form2", function(){
+                alert("bye");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="ct">
+        <div id="nav">
+            <form id="form1">
+                <select id="drop_down">
+                    <option name="place_hold" value="none">--Choose One--</option>
+                    <option name="Seattle" value="Seattle,us">Seattle, WA</option>
+                    <option name="San_Francisco" value="San_Francisco">San Francisco, CA</option>
+                    <option name="San_Jose" value="San_Jose">San Jose, CA</option>
+                    <option name="Los_Angeles" value="Los_Angeles">Los Angeles, CA</option>
+                </select>
+                <input type="submit"></input>
+            </form>
+            <form id="form2">
+                <label for="#city">Choose a city: </label>
+                <input id="city" type="text"></input>
+                <label for="#state">Choose a state: </label>
+                <input id="state" type="text"></input>
+                <input type="submit"></input>
+            </form>
+        </div>
+        <div id="info">
+        </div>
+    </div>
+</body>
+</html>
