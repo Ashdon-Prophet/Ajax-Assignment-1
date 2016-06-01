@@ -1,0 +1,56 @@
+
+* {
+	outline: 1px dotted blue;
+}
+
+div#ct {
+	width: 900px;
+	height: 600px;
+	border: 2px solid black;
+	vertical-align: top;
+	margin: 30px auto;
+}
+
+div#nav  {
+	width: 200px;
+	height: 560px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px 5px 20px 30px;
+	border: 2px solid black;
+}
+
+	#form1 {
+		margin-top: 20px;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	#form1 input {
+		display: block;
+		margin-top: 20px;
+		font-weight: bold;
+		width: 160px;
+	}
+
+	#form2 {
+		margin-top: 120px;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	#form2 input {
+		display: block;
+		margin-top: 20px;
+		font-weight: bold;
+		width: 160px;
+	}
+
+div#info {
+	width: 615px;
+	height: 560px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px 30px 20px 5px;
+	border: 2px solid black;
+}
